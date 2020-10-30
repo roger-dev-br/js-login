@@ -46,13 +46,7 @@ function quantidadeDeMulheres() {
 }
 
 function quantidadeTotal() {
-    var quantidade = 0;
-
-    for (var usuario of usersList) {
-        quantidade++;
-    }
-
-    return quantidade;  
+    return usersList.length;  
 }
 
 window.addEventListener('load', function () {
@@ -72,4 +66,8 @@ window.addEventListener('load', function () {
     // População de mulheres
     document.getElementById("percMulher").innerText = ((quantidadeDeMulheres() / quantidadeTotal()) * 100).toFixed(2) + "%";    
     document.getElementById("percMulherBar").style = `width: ${((quantidadeDeMulheres() / quantidadeTotal()) * 100).toFixed(2)}%`;     
+
+    setInterval(function() {
+        document.getElementById("horario").innerText = new Date().toTimeString().substring(0, 8);
+    }, 1000);
 });

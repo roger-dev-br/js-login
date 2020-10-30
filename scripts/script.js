@@ -22,8 +22,8 @@ function entrar(event) {
         alert("Senha incorreta");
         return;
     }
-
-    alert("OK");
+    
+    location.href = "dashboard.html";
 }
 
 function trocafoto() {
