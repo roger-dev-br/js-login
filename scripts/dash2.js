@@ -68,6 +68,12 @@ window.addEventListener('load', function () {
     document.getElementById("percMulherBar").style = `width: ${((quantidadeDeMulheres() / quantidadeTotal()) * 100).toFixed(2)}%`;     
 
     setInterval(function() {
-        document.getElementById("horario").innerText = new Date().toTimeString().substring(0, 8);
+        var data = new Date().toLocaleDateString();
+        var horario = new Date().toTimeString().substring(0, 8);
+        document.getElementById("horario").innerHTML = `${data} ${horario}`;
     }, 1000);
+
+    var usuario = JSON.parse(localStorage.getItem("usuario"));
+    document.getElementById("avatar").src = usuario.picture.thumbnail;
+    document.getElementById("nome").innerText = usuario.name;
 });

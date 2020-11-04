@@ -22,6 +22,9 @@ function entrar(event) {
         alert("Senha incorreta");
         return;
     }
+
+    // Salvo o usuário no local storage
+    localStorage.setItem("usuario", JSON.stringify(usuario));
     
     location.href = "dashboard.html";
 }
